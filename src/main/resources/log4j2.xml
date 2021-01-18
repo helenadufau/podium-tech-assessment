@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://logging.apache.org/log4j/2.x/index.html -->
+<Configuration LOG4J_SKIP_JANSI="false" name="Logs" packages="" status="warn">
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>
+                    %replace{[%style{%highlight{%p}{FATAL=white, ERROR=red, WARN=yellow, INFO=blue, DEBUG=magenta, TRACE=cyan,}}{bright}] %msg{nolookups}{ansi}%n}{(.*Using chromedriver.*\(since.*is installed in your machine\)[\r\n])*(.*Exporting.*as.*driver[\r\n])*(.*Clearing WebDriverManager preferences[\r\n])*}{}
+                </Pattern>
+            </PatternLayout>
+        </Console>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="all">
+            <AppenderRef level="${sys:logLevel:-info}" ref="console"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
