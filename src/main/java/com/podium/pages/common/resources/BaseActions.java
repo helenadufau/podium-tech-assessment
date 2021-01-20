@@ -4,8 +4,9 @@ import com.podium.listeners.TestListener;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,11 +14,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Iterator;
 import java.util.List;
 
 import static com.podium.driver.DriverFactory.getDriver;
-import static java.lang.Thread.sleep;
 
 public class BaseActions {
 
@@ -59,7 +58,7 @@ public class BaseActions {
 
     public boolean verifyURI(String URI) {
 
-        if(!"https://".equals(this.getProtocol())){
+        if (!"https://".equals(this.getProtocol())) {
             logger.error("Couldn't verify URI, protocol not supported.");
             return false;
         }
@@ -181,7 +180,7 @@ public class BaseActions {
 
     }
 
-    protected void waitForPageLoad(){
+    protected void waitForPageLoad() {
 
         new WebDriverWait(getDriver(), 10000).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));

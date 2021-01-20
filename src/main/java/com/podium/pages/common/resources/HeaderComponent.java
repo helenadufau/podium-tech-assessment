@@ -11,53 +11,38 @@ import static com.podium.driver.DriverFactory.getDriver;
 
 public class HeaderComponent extends BaseActions {
 
-    @FindAll({@FindBy(tagName = "a")})
-    List<WebElement> allLinks;
-
     @FindBy(css = ".menu-item:nth-child(3) > span")
     protected WebElement productsItem;
-
     @FindBy(css = "#theme-white > nav > div > div.menu-left > ul > li:nth-child(4)")
     protected WebElement solutionItem;
-
     @FindBy(linkText = "Enterprise")
     protected WebElement enterpriseItem;
-
     @FindBy(css = "#theme-white > nav > div > div.menu-left > ul > li:nth-child(6)")
     protected WebElement resourcesItem;
-
     @FindBy(linkText = "Pricing")
     protected WebElement pricingItem;
-
     @FindBy(linkText = "Login")
     protected WebElement loginItem;
-
     @FindBy(linkText = "Watch Demo")
     protected WebElement watchDemoItem;
-
     @FindBy(css = ".product-items:nth-child(1) .product-text > span")
     protected WebElement reviews;
-
     @FindBy(css = ".product-items:nth-child(2) .product-text > span")
     protected WebElement feedback;
-
     @FindBy(css = ".product-items:nth-child(3) .product-text > span")
     protected WebElement payments;
-
     @FindBy(css = ".product-items:nth-child(4) .product-text > span")
     protected WebElement teamChat;
-
     @FindBy(css = ".product-items:nth-child(5) .product-text > span")
     protected WebElement videoChat;
-
     @FindBy(css = ".product-items:nth-child(6) .product-text > span")
     protected WebElement webChat;
-
     @FindBy(css = ".product-items:nth-child(7) .product-text > span")
     protected WebElement inbox;
-
     @FindBy(css = "#page > nav > div.menu-wrapper > div.menu-left > ul > li:nth-child(3) > ul > li:nth-child(8) > a")
     protected WebElement tryingFreeVersion;
+    @FindAll({@FindBy(tagName = "a")})
+    List<WebElement> allLinks;
 
     public HeaderComponent() {
 
@@ -86,7 +71,7 @@ public class HeaderComponent extends BaseActions {
         return super.isElementPresent(this.productsItem) && super.isElementPresent(this.solutionItem)
                 && super.isElementPresent(this.enterpriseItem) && super.isElementPresent(this.resourcesItem)
                 && super.isElementPresent(this.pricingItem) && super.isElementPresent(this.loginItem)
-                && super.isElementPresent(this.watchDemoItem) ;
+                && super.isElementPresent(this.watchDemoItem);
 
     }
 
@@ -95,7 +80,6 @@ public class HeaderComponent extends BaseActions {
         return getAttribute(this.loginItem, "href").equals("https://app.podium.com/");
 
     }
-
 
 
     public boolean isPricingLinkOk() {
@@ -108,14 +92,14 @@ public class HeaderComponent extends BaseActions {
 
         boolean areOk = true;
         super.waitForPageLoad();
-        for(WebElement link:allLinks){
-            boolean isOk =  verifyURI(link.getAttribute("href"));
-            if(!isOk){
+        for (WebElement link : allLinks) {
+            boolean isOk = verifyURI(link.getAttribute("href"));
+            if (!isOk) {
                 areOk = false;
                 logger.error("Broken link: " + link.getAttribute("href"));
             }
         }
-        return  areOk;
+        return areOk;
     }
 
 }

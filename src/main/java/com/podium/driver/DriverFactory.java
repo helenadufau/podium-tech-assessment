@@ -2,7 +2,6 @@ package com.podium.driver;
 
 import com.podium.driver.browser.ChromeManager;
 import com.podium.listeners.TestListener;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

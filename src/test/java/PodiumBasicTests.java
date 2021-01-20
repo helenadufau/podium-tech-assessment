@@ -1,10 +1,9 @@
 import com.podium.pages.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-public class Tests extends BaseTest{
+public class PodiumBasicTests extends BaseTest {
 
 
     private HomePage homePage;
@@ -29,6 +28,7 @@ public class Tests extends BaseTest{
 
     }
 
+
     @Test(description = "Testing if the header shows the expected elements ")
     public void showingAllProducts() {
 
@@ -39,7 +39,7 @@ public class Tests extends BaseTest{
     @Test(description = "Testing login link")
     public void loginLink() {
 
-       Assert.assertTrue(homePage.accessPage().headerComponent().isLoginLinkOk());
+        Assert.assertTrue(homePage.accessPage().headerComponent().isLoginLinkOk());
 
     }
 
