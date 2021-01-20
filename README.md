@@ -23,12 +23,12 @@ This document is organized into three sections, these can be seen below:
 
 ##  1. Test Plan, Technologies and Decisions
 
-####1.1 Test Plan:
+#### 1.1 Test Plan:
 
 Once the scope of the task was open, it was decided to test the availability of some elements and look for broken links on the page. One of the elements was present in the header, as the homepage is an introductory page that contains the header, and it displays links to pages that offer more detailed information according to the user's interest. So the display of the header elements was seen as a priority when it comes to testing, as users will likely be browsing this for information. Within the header, taking into account that every company that produces something for the market has the intention of
  exhibiting to sell their products, the appropriate display of the products was tested. For the same reason, it was tested whether the correct link to the pricing page was displayed. Considering then that this same company intends to retain its customers, an important point is that they are able to easily find the login page and access the products / resources purchased, so it was tested if the correct link to the login page was being used. It is worth mentioning that for these tests it was assumed that the current state of the links was correct. In addition, a test was carried out looking for broken links on the homepage, as this is a large "link map" that contains relevant information about the company and it can be difficult to keep track of when one of these is broken.
  
-####1.2 Technologies:
+#### 1.2 Technologies:
 
 Java 11
 
@@ -52,7 +52,7 @@ Log4j slf4j impl 2.13.1
 
 Jansi 1.18 
 
-####1.3 Decisions:
+#### 1.3 Decisions:
 
 
 - Selenium (Java)
@@ -140,7 +140,7 @@ After that you have a few running options:
 
 For more running information and options access the [documentation of Maven Surefire Plugin](http://maven.apache.org/surefire/maven-surefire-plugin/index.html).
 
-###* Info
+### * Info
 The searching for broken links test could take a while, like several minutes. I would recommend you to run and validate the other tests first with:
 
 `mvn clean -Dtest=PodiumBasicTests#showingAllHeaderElements+showingAllProducts+loginLink+pricingLink test`
