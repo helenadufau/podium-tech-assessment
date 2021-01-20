@@ -23,7 +23,6 @@
         <log4j-api.version>2.13.1</log4j-api.version>
         <log4j-slf4j-impl.version>2.13.1</log4j-slf4j-impl.version>
         <jansi.version>1.18</jansi.version>
-        <webdrivermanager.version>3.8.1</webdrivermanager.version>
         <!--  plugins  -->
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
