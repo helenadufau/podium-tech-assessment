@@ -19,7 +19,8 @@
         <testng.version>7.3.0</testng.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <webdrivermanager.version>4.2.2</webdrivermanager.version>
-        <log4j-core.version>2.13.1</log4j-core.version>
+        <dotenv-java.version>2.2.0</dotenv-java.version>
+        <log4j-core.version>2.13.2</log4j-core.version>
         <log4j-api.version>2.13.1</log4j-api.version>
         <log4j-slf4j-impl.version>2.13.1</log4j-slf4j-impl.version>
         <jansi.version>1.18</jansi.version>
@@ -36,12 +37,6 @@
             <artifactId>selenium-java</artifactId>
             <groupId>org.seleniumhq.selenium</groupId>
             <version>${selenium-java.version}</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-        <dependency>
-            <artifactId>commons-io</artifactId>
-            <groupId>commons-io</groupId>
-            <version>${commons-io.version}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
         <dependency>
@@ -88,17 +83,11 @@
             <version>${webdrivermanager.version}</version>
             <scope>compile</scope>
         </dependency>
-        <!-- https://github.com/DiUS/java-faker -->
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
-        </dependency>
         <!-- https://github.com/cdimascio/dotenv-java -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>
-            <version>2.2.0</version>
+            <version>${dotenv-java.version}</version>
         </dependency>
     </dependencies>
 
